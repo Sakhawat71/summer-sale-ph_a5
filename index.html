@@ -15,8 +15,10 @@
         <div class="md:flex  w-9/12 mx-auto text-center justify-center items-center">
             <div class="md:w-1/2 md:px-10 md:space-y-8 mb-10 ">
                 <h4>---SALE FEVER---</h4>
-                <h1 class="text-4xl font-bold">Purchase TK 200 or above & get <span class="text-[#E527B2]">20% off</span></h1>
-                <p class=" font-medium py-10 md:py-0">Use Promo Code <span class="bg-[#E527B2] text-white py-3 md:py-0 lg:py-3 px-4 text-xl ml-2 font-semibold rounded-lg">SELL200</span>
+                <h1 class="text-4xl font-bold">Purchase TK 200 or above & get <span class="text-[#E527B2]">20%
+                        off</span></h1>
+                <p class=" font-medium py-10 md:py-0">Use Promo Code <span
+                        class="bg-[#E527B2] text-white py-3 md:py-0 lg:py-3 px-4 text-xl ml-2 font-semibold rounded-lg">SELL200</span>
                 </p>
             </div>
             <div class="md:w-1/2">
@@ -199,9 +201,9 @@
 
             <div class="py-10 bg-[#FFFFFF] px-4 rounded-lg">
                 <h4 class="text-2xl font-medium pb-2">Have coupon?</h4>
-                <input type="text" placeholder="Coupon code"
+                <input type="text" id="promo-code" placeholder="Coupon code"
                     class="input input-bordered  inline-block w-7/12 max-w-xs rounded-r-none  outline-none" />
-                <button disabled
+                <button disabled id="apply-btn"
                     class="bg-[#E527B2] btn text-white w-4/12 rounded-r-lg py-3 px-4 inline-block ">Apply</button>
             </div>
             <div class="pt-10 mt-5 rounded-lg bg-white">
@@ -210,15 +212,15 @@
 
                     </ol>
                 </div>
-                
+
                 <hr class="w-9/12 mx-auto my-4">
 
                 <div class="space-y-3 pb-3 font-medium pl-5 text-xl">
                     <p>Total price: <span id="total-price" class="text-[#11111180]">00.00</span>TK</p>
-                    <p>Discount : <span class="text-[#11111180]">00.00</span>TK</p>
-                    <p>Total: <span class="text-[#11111180]">00.00</span>TK</p>
+                    <p>Discount : <span id="discount-show" class="text-[#11111180]">00.00</span>TK</p>
+                    <p>Total: <span id="final-total" class="text-[#11111180]">00.00</span>TK</p>
                 </div>
-                <button onclick="my_modal_5.showModal()"
+                <button onclick="my_modal_5.showModal()" disabled id="purchase-btn"
                     class="btn bg-[#E527B2] mt-5 text-white w-full font-medium text-base">Make
                     Purchase</button>
                 <!-- Open the modal using ID.showModal() method -->
@@ -232,7 +234,7 @@
                         <div class="modal-action content-center justify-center">
                             <form method="dialog">
                                 <!-- if there is a button in form, it will close the modal -->
-                                <button class="btn bg-[#E527B2] text-white">Go Home</button>
+                                <button onclick="completePurchase()" class="btn bg-[#E527B2] text-white">Go Home</button>
                             </form>
                         </div>
                     </div>
