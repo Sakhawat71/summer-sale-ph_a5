@@ -46,33 +46,30 @@ const getProductInfo = (target) => {
     // appaly Promo Code
 
     applyBtn.addEventListener("click", function () {
-        const applyFild = document.getElementById("promo-code");
-        const pormoValue = applyFild.value;
+
+        const applyField = document.getElementById("promo-code");
+        const promoValue = applyField.value;
         const discountValue = document.getElementById("discount-show");
         const finalTotal = document.getElementById("final-total");
 
-        
-        if (pormoValue === "SELL200") {
-            console.log("got it")
+
+        if (promoValue === "SELL200") {
+
+
             const discount = (sumTotalPrice / 100) * 20;
-            const fildDiscount = discount.toFixed(2);
-            discountValue.innerHTML = fildDiscount;
+            const fieldDiscount = discount.toFixed(2);
+            discountValue.innerHTML = fieldDiscount;
             const grandTotal = sumTotalPrice - discount;
-            finalTotal.innerText = grandTotal;
+            finalTotal.innerText = grandTotal.toFixed(2);
 
-            applyFild.value = '';
+            applyField.value = '';
 
         }
-        else if(pormoValue === ''){
-            alert("If you have any promo code enter it here")
+        else {
+            alert("Wrong Promo Code.");
         }
-        else{
-            alert("Wrong Promo Code");
-        }
-    })
+    });
 
-
-    
 
 }
 
